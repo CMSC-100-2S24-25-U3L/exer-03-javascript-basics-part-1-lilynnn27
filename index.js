@@ -50,12 +50,12 @@ function storePassword(name, pass1, pass2) {
   return finalObject;
 }
 
-// test run
-// console.log(validatePassword("helloworld", "hello"));
-// console.log(validatePassword("hello", "hello"));
-// console.log(validatePassword("hello1234", "hello1234"));
-// console.log(validatePassword("Hello1234", "Hello1234"));
-// console.log(validatePassword("HELLO1234", "HELLO1234"));
+//test runs
+console.log(validatePassword("helloworld", "hello"));
+console.log(validatePassword("hello", "hello"));
+console.log(validatePassword("hello1234", "hello1234"));
+console.log(validatePassword("Hello1234", "Hello1234"));
+console.log(validatePassword("HELLO1234", "HELLO1234"));
 
 
 console.log(reversePassword("hello"));
