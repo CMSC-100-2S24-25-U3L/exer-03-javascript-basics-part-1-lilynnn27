@@ -1,34 +1,32 @@
 function validatePassword(a, b) {
-  isValid = true;
-
-  while (isValid) {
-    if (a !== b) {
-      isValid = false; //check first if a and b are equal/matching
-    }
-
-    if (a.length < 8) {
-      isValid = false; //check the length
-    }
-
-    if (a.includes("1", "2", "3", "4", "5", "6", "7", "8", "9", "0")) {
-      isValid = isValid; //retain isValid
-    } else {
-      isValid = false; //check if the string has numbers
-    }
-
-    if (a == a.toUpperCase()) {
-      isValid = false; //check if the string has all uppercase letters
-    }
-
-    if (a == a.toLowerCase()) {
-      isValid = false; //check if the string has all lowercase letters
-    }
-
-    //by the end of these if statements, all cases would be already covered
+  if (a !== b) {
+      return false; //check first if the passwords match, if not return false immediately
   }
 
-  return isValid; //will return whatever value the isValid is storing;
-  //will be true by default if it went through the if statements without satisfying a condition
+  if (a.length < 8) {
+      return false; // check length of the password, if not 8 or more return false immediately
+  }
+
+  //to check for character requirements
+  let hasLower = false;
+  let hasUpper = false;
+  let hasNumber = false;
+
+  //loop through the string to check conditions
+  for (let char of a) {
+      if (!isNaN(char)) {
+          hasNumber = true; //check if there is at least a number
+      } else if (char === char.toUpperCase()) {
+          hasUpper = true; //check if there is at least an uppercase
+      } else if (char === char.toLowerCase()) {
+          hasLower = true; //check if there is at least a lowercase
+      }
+      if (hasLower && hasUpper && hasNumber) {
+          return true; //if all conditions are met retrun true
+      }
+  }
+
+  return false; //return false if any condition is not met in the loop
 }
 
 function reversePassword(a) {
