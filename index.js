@@ -39,7 +39,18 @@ function reversePassword(a) {
   return final;
 }
 
-function storePassword() {}
+function storePassword(name, pass1, pass2) {
+  var valid = validatePassword(pass1, pass2);
+  if(valid){
+    var finalPass = reversePassword(pass1);
+  } else {
+    var finalPass = pass1;
+  }
+
+  const finalObject = {firstName:name, newpassword: finalPass};
+
+  return finalObject;
+}
 
 // test run
 // console.log(validatePassword("helloworld", "hello"));
@@ -50,3 +61,5 @@ function storePassword() {}
 
 
 console.log(reversePassword("hello"));
+
+console.log(storePassword("Cleo", "Pass1234", "Pass1234"));
