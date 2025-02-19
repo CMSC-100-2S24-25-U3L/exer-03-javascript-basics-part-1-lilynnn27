@@ -31,12 +31,22 @@ function validatePassword(a, b) {
   //will be true by default if it went through the if statements without satisfying a condition
 }
 
-function reversePassword() {}
+function reversePassword(a) {
+  var temp = a.split(""); //turn the string into an array of characters to use the built in function for later
+  var reversed = temp.reverse(); //a built in function used in javascript for arrays
+  var final = reversed.join("");
+
+  return final;
+}
 
 function storePassword() {}
 
-console.log(validatePassword("helloworld", "hello"));
-console.log(validatePassword("hello", "hello"));
-console.log(validatePassword("hello1234", "hello1234"));
-console.log(validatePassword("Hello1234", "Hello1234"));
-console.log(validatePassword("HELLO1234", "HELLO1234"));
+// test run
+// console.log(validatePassword("helloworld", "hello"));
+// console.log(validatePassword("hello", "hello"));
+// console.log(validatePassword("hello1234", "hello1234"));
+// console.log(validatePassword("Hello1234", "Hello1234"));
+// console.log(validatePassword("HELLO1234", "HELLO1234"));
+
+
+console.log(reversePassword("hello"));
